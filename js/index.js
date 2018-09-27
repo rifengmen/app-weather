@@ -6,6 +6,7 @@ $.ajax({
     dataType: "jsonp",
     success: function (obj) {
         tianqi = obj.data;
+        console.log(tianqi);
         updata(tianqi);
     }
 });
@@ -63,7 +64,7 @@ function updata(tianqi) {
                                     <span class="min">${tianqi.weather.tomorrow_low_temperature}</span>°C
                                 </span>
                                 <span>
-                                    <img src="./img/${tianqi.weather.weather_icon_id}.png" alt="">
+                                    <img src="./img/${tianqi.weather.tomorrow_weather_icon_id}.png" alt="">
                                 </span>
                             </div>
                         </div>`;
