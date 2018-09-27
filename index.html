@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>首页</title>
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<!--视窗口-->
+<div class="win">
+    <!--今日天气部分-->
+    <header>
+        <!--定位城市-->
+        <div class="citys">
+            <i class="iconfont icon-dingwei"></i>&nbsp;
+            <span class="citysNow"></span>&nbsp;
+            <span>
+                <img src="./img/first.png" alt="">
+            </span>
+        </div>
+        <!--空气质量-->
+        <div class="air">
+            <div>
+                <span>空气</span>
+                <span class="airNow"></span>
+            </div>
+        </div>
+        <!--气温状况-->
+        <div class="text">
+            <div class="down">
+                <span class="downTop"></span>
+                <span class="downMiddle"></span>
+                <span>风力&nbsp;<span class="downBottom"></span></span>
+            </div>
+            <div class="up">天冷了，注意保暖~</div>
+        </div>
+        <!--底部图片-->
+        <div class="imgs">
+            <img src="./img/screen.png" alt="">
+        </div>
+    </header>
+    <!--选择城市隐藏部分-->
+    <div class="hid">
+        <div class="inputs">
+            <div class="left">
+                <i class="iconfont icon-sousuo"></i>
+                <input type="text" placeholder="搜索市、区、县等">
+            </div>
+            <div class="right hidRight">取消</div>
+        </div>
+        <!--<div class="history">-->
+            <!--<ul>历史记录<br>-->
+                <!--<li>拉萨</li>-->
+                <!--<li>上海</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <div class="hotCitys">
+            <ul>热门城市 <br>
+                <li>北京</li>
+                <li>上海</li>
+                <li>广州</li>
+                <li>深圳</li>
+                <li>郑州</li>
+                <li>西安</li>
+                <li>南京</li>
+                <li>杭州</li>
+                <li>武汉</li>
+                <li>成都</li>
+                <li>沈阳</li>
+            </ul>
+        </div>
+        <div class="now">
+            <ul class="cityHome">选择城市<br>
+                <ul class="prov">
+                </ul>
+                <!--<li>太原</li>-->
+            </ul>
+        </div>
+        <!--<div class="hotScenic">-->
+            <!--<ul>热门景区<br>-->
+                <!--<li>小店区</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    </div>
+    <!--详细天气部分-->
+    <main>
+        <!--明日预报部分-->
+        <div class="tomorrow">
+            <!--<div class="left weather">-->
+                <!--<div>-->
+                    <!--<span>今天</span>-->
+                    <!--<span>晴转多云</span>-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<span>-->
+                        <!--<span>2</span>/-->
+                        <!--<span>-11</span>°C-->
+                    <!--</span>-->
+                    <!--<span>-->
+                        <!--<img src="./img/0.png" alt="">-->
+                    <!--</span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="inter"></div>-->
+            <!--<div class="right weather">-->
+                <!--<div>-->
+                    <!--<span>明天</span>-->
+                    <!--<span>晴</span>-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<span>-->
+                        <!--<span>2</span>/-->
+                        <!--<span>-11</span>°C-->
+                    <!--</span>-->
+                    <!--<span>-->
+                        <!--<img src="./img/0.png" alt="">-->
+                    <!--</span>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <!--分隔栏-->
+        <div class="int"></div>
+        <!--今日详情部分-->
+        <div class="today">
+            <ul class="todayText">
+                <!--<li>-->
+                    <!--<span>0:00</span>-->
+                    <!--<span>-->
+                        <!--<img src="./img/30.png" alt="">-->
+                    <!--</span>-->
+                    <!--<span>-5°</span>-->
+                <!--</li>-->
+
+            </ul>
+        </div>
+        <!--分隔栏部分-->
+        <div class="int"></div>
+        <!--未来半个月天气预报部分-->
+        <div class="week">
+            <ul>
+                <!--<li>-->
+                    <!--<div>-->
+                        <!--<span>01/20</span>-->
+                    <!--</div>-->
+                    <!--<div>多云</div>-->
+                    <!--<div>-->
+                        <!--<img src="./img/1.png" alt="">-->
+                    <!--</div>-->
+                    <!--<div>3°</div>-->
+                    <!--<div>-->
+                        <!--<span class="dots dotDown"></span>-->
+                    <!--</div>-->
+                    <!--<div>-->
+                        <!--<span class="dots dotUp"></span>-->
+                    <!--</div>-->
+                    <!--<div>-12°</div>-->
+                    <!--<div>-->
+                        <!--<img src="./img/31.png" alt="">-->
+                    <!--</div>-->
+                    <!--<div>多云</div>-->
+                    <!--<div>-->
+                        <!--<span>西北风</span>-->
+                        <!--<span>3级</span>-->
+                    <!--</div>-->
+                <!--</li>-->
+
+            </ul>
+        </div>
+        <!--分隔栏部分-->
+        <div class="int"></div>
+        <!--推荐部分-->
+        <div class="recommend">
+            <div class="umbrella">
+                <i class="iconfont icon-yusan"></i>
+                <span class="hint">不带伞</span>
+                <span>雨伞</span>
+            </div>
+            <div class="dress">
+                <i class="iconfont icon-yifu"></i>
+                <span class="hint">冷</span>
+                <span>穿衣</span>
+            </div>
+            <div class="sun">
+                <i class="iconfont icon-iconset0451"></i>
+                <span class="hint">较弱</span>
+                <span>防晒</span>
+            </div>
+            <div class="cold">
+                <i class="iconfont icon-yao"></i>
+                <span class="hint">较易发</span>
+                <span>感冒</span>
+            </div>
+            <div class="ball">
+                <i class="iconfont icon-qiu"></i>
+                <span class="hint">较不宜</span>
+                <span>运动</span>
+            </div>
+            <div class="wash">
+                <i class="iconfont icon-xiche"></i>
+                <span class="hint">较适宜</span>
+                <span>洗车</span>
+            </div>
+            <div class="fish">
+                <i class="iconfont icon-yu"></i>
+                <span class="hint">不宜</span>
+                <span>钓鱼</span>
+            </div>
+            <div class="traffic">
+                <i class="iconfont icon-jiaotongtraffic9"></i>
+                <span class="hint">良好</span>
+                <span>交通</span>
+            </div>
+        </div>
+    </main>
+    <!--footer部分-->
+    <footer>数据来源于中国天气网</footer>
+</div>
+</body>
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script src="./js/rem.js"></script>
+<script src="./js/index.js"></script>
+<script></script>
+</html>

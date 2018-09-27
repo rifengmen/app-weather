@@ -1,0 +1,413 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none; /*列表去标题*/
+    text-decoration: none;/*a链接去下划线*/
+    outline: none;/*input选中状态框去除*/
+    background: no-repeat center;
+    border: 0;
+    font-size: 0.24rem;
+    font-weight: 300;
+    color: #fff;
+    font-family: "microsoft yahei","苹方","sans-serif";
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-text-size-adjust: none;
+}
+div.win {
+    width: 100%;
+    height: 13.34rem;
+}
+/*今日天气部分*/
+header {
+    width: 100%;
+    height: 9.58rem;
+    background: linear-gradient(#3cbeff,#47e8ff);
+}
+/*定位城市*/
+header .citys {
+    width: 100%;
+    height: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+header .citys:hover {
+    cursor: pointer;
+}
+header .citys>span {
+    font-size: 0.3rem;
+}
+header .citys img {
+    position: absolute;
+    top: 0.22rem;
+    right: 0.24rem;
+    width: 0.44rem;
+    height: 0.52rem;
+    border-radius: 0.06rem;
+}
+/*空气质量*/
+header .air {
+    width: 100%;
+    height: 1.08rem;
+    padding: 0.1rem;
+}
+header .air div {
+    width: 1.46rem;
+    height: 0.88rem;
+    margin-left: 0.1rem;
+    border-radius: 0.1rem;
+    background: #f1ab62;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+header .air div span {
+    font-size: 0.26rem;
+    font-weight: 300;
+}
+header .air div span:nth-child(1) {
+    font-size: 0.22rem;
+}
+/*气温状况*/
+header .text {
+    width: 100%;
+    height: 5rem;
+}
+header .text .down {
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+header .text .down .downTop {
+    width: 100%;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    text-align: center;
+    font-size: 1.3rem;
+}
+header .text .down .downMiddle {
+    width: 100%;
+    height: 0.56rem;
+    line-height: 0.56rem;
+    text-align: center;
+    font-size: 0.36rem;
+}
+header .text .down .downBottom {
+    width: 100%;
+    height: 0.46rem;
+    line-height: 0.46rem;
+    text-align: center;
+    font-size: 0.26rem;
+}
+header .text .up {
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+}
+/*底部图片*/
+header .imgs {
+    width: 100%;
+    height: 2.4rem;
+}
+header .imgs img {
+    width: 100%;
+    height: 100%;
+}
+/*选择城市隐藏部分*/
+div.hid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    display: none;
+}
+.hid .inputs {
+    width: 100%;
+    height: 0.86rem;
+    padding: 0 0.24rem;
+    border-bottom: 0.02rem solid #e4e4e4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hid .inputs .left {
+    width: 6rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    background: #f2f2f2;
+    border-radius: 0.3rem;
+    padding-left: 0.2rem;
+}
+.hid .inputs .left>i {
+    font-size: 0.28rem;
+    color: #8f8f8f;
+}
+.hid .inputs .left>i {
+    font-size: 0.28rem;
+    color: #8f8f8f;
+}
+.hid .inputs .left>input {
+    background: #f2f2f2;
+    color: #333;
+}
+.hid .inputs .right {
+    width: 1.2rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.3rem;
+    color: #333;
+    text-align: end;
+}
+.hid ul {
+    font-size: 0.26rem;
+    color: #333;
+    margin-top: 0.5rem;
+    line-height: 1;
+}
+.hid ul>li{
+    display: inline-block;
+    width: 2.2rem;
+    height: 0.6rem;
+    margin: 0.2rem 0;
+    line-height: 0.6rem;
+    text-align: center;
+    border-radius: 0.3rem;
+    font-size: 0.22rem;
+    color: #333;
+    background: #f2f2f2;
+}
+.hid .now {
+    width: 100%;
+    padding: 0 0.24rem;
+}
+.hid .history {
+    width: 100%;
+    padding: 0 0.24rem;
+}
+.hid .hotCitys {
+    width: 100%;
+    padding: 0 0.24rem;
+}
+.hid .hotScenic {
+    width: 100%;
+    padding: 0 0.24rem;
+}
+/*详细天气部分*/
+/*分割栏*/
+main div.int {
+    width: 100%;
+    height: 0.2rem;
+    border-top: 0.02rem solid #e4e4e4;
+    border-bottom: 0.02rem solid #e4e4e4;
+    background: #f5f5f5;
+}
+/*明日预报部分*/
+main .tomorrow {
+    width: 100%;
+    height: 2rem;
+    background: #fff;
+    padding: 0.4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+main .tomorrow .weather {
+    width: 3rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+main .tomorrow .weather div {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column;
+}
+main .tomorrow .weather div:nth-child(2) {
+    text-align: end;
+}
+main .tomorrow .weather>div>span {
+    width: 1.5rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    color: #000;
+}
+main .tomorrow .weather>div>span>span {
+    color: #000;
+}
+main .tomorrow .inter {
+    width: 0.02rem;
+    height: 1rem;
+    background: #e4e4e4;
+}
+main>.tomorrow>.weather div img {
+    width: 0.6rem;
+    height: 0.6rem;
+}
+/*今日详情部分*/
+main .today {
+    height: 2.66rem;
+    background: #fff;
+    overflow-x: auto;
+}
+/*今日详情内容部分*/
+main .todayText {
+    width: 34.84rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+main .todayText li {
+    display: block;
+    width: 1.34rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+main .todayText li span:nth-child(1) {
+    color: #ccc;
+}
+main .todayText li span:nth-child(3) {
+    color: #333;
+}
+main .todayText li img {
+    width: 0.6rem;
+    height: 0.6rem;
+    margin: 0.2rem auto;
+}
+/*一周预报部分*/
+main .week {
+    width: 100%;
+    height: 7.74rem;
+    background: #fff;
+    overflow-x: auto;
+}
+main .week>ul {
+    width: 20rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+main .week>ul>li {
+    width: 1.25rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+main .week>ul>li>div {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column;
+    align-items: center;
+    color: #333;
+    font-weight: 400;
+    margin: 0.14rem auto;
+}
+main .week>ul>li:nth-child(1)>div {
+    opacity: 0.7;
+}
+main .week>ul>li>div>span {
+    font-size: 0.2rem;
+    font-weight: 400;
+    color: #333;
+    line-height: 2;
+    opacity: 0.7;
+}
+main .week>ul>li:nth-child(1)>div>span {
+    opacity: 1;
+}
+main .week>ul>li img {
+    width: 0.6rem;
+    height: 0.6rem;
+    margin: 0.2rem auto;
+}
+main .week .dots {
+    width: 0.16rem;
+    height: 0.16rem;
+    border-radius: 50%;
+    margin: 0.2rem auto;
+}
+main .week .dotDown {
+    background: #ffb74d;
+}
+main .week .dotUp {
+    background: #4fc3f7;
+}
+/*推荐部分*/
+main .recommend {
+    width: 100%;
+    height: 3.74rem;
+    background: #e4e4e4;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+}
+main .recommend div {
+    width: 1.85rem;
+    height: 1.85rem;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+main .recommend div>i {
+    font-size: 0.4rem;
+}
+main .recommend div>span {
+    color: #333;
+    line-height: 1.5;
+    opacity: 0.7;
+}
+main .recommend div>.hint {
+    opacity: 1;
+    font-size: 0.3rem;
+    line-height: 1.5;
+}
+main .recommend .umbrella>i {
+    color: #c6ace3;
+}
+main .recommend .dress>i {
+    color: #E1A4C4;
+}
+main .recommend .sun>i {
+    color: #E3BEB3;
+}
+main .recommend .cold>i {
+    color: #E0C99F;
+}
+main .recommend .ball>i {
+    color: #E6D99D;
+}
+main .recommend .wash>i {
+    color: #B5E6A8;
+}
+main .recommend .fish>i {
+    color: #A3DFD4;
+}
+main .recommend .traffic>i {
+    color: #78909C;
+}
+/*footer部分*/
+footer {
+    width: 100%;
+    height: 0.78rem;
+    font-size: 0.22rem;
+    color: #d1d1d1;
+    line-height: 0.76rem;
+    text-align: center;
+    border-top: 0.02rem solid #e4e4e4;
+    background: #f5f5f5;
+}
