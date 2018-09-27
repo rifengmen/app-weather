@@ -26,8 +26,9 @@ header {
 }
 /*定位城市*/
 header .citys {
-    width: 100%;
+    width: 2rem;
     height: 1.1rem;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +40,7 @@ header .citys:hover {
 header .citys>span {
     font-size: 0.3rem;
 }
-header .citys img {
+header .pic img {
     position: absolute;
     top: 0.22rem;
     right: 0.24rem;
@@ -235,7 +236,13 @@ main .tomorrow .weather div:nth-child(2) {
     text-align: end;
 }
 main .tomorrow .weather>div>span {
-    width: 1.5rem;
+    width: 1rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    color: #000;
+}
+main .tomorrow .weather>div:nth-child(1)>span {
+    width: 2rem;
     height: 0.6rem;
     line-height: 0.6rem;
     color: #000;
@@ -314,6 +321,10 @@ main .week>ul>li>div {
     color: #333;
     font-weight: 400;
     margin: 0.14rem auto;
+    text-align: center;
+}
+main .week>ul>li>div:nth-child(2) {
+    height: 0.34rem;
 }
 main .week>ul>li:nth-child(1)>div {
     opacity: 0.7;
@@ -324,6 +335,7 @@ main .week>ul>li>div>span {
     color: #333;
     line-height: 2;
     opacity: 0.7;
+    text-align: center;
 }
 main .week>ul>li:nth-child(1)>div>span {
     opacity: 1;

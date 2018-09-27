@@ -69,6 +69,7 @@ function updata(tianqi) {
                         </div>`;
     $(".tomorrow").html(tomorrowStr);
     // 今日天气详情
+    $(".todayText").html("");
     let todayArr = tianqi.weather.hourly_forecast;
     todayArr.forEach(v => {
         let todayStr = `<li>
@@ -81,6 +82,7 @@ function updata(tianqi) {
         $(".todayText").append(todayStr);
     })
     // 未来半个月天气预报部分
+    $(".week ul").html("");
     let weekArr = tianqi.weather.forecast_list;
     weekArr.forEach(v => {
         let weekStr = `<li>
@@ -116,31 +118,33 @@ $(".hidRight").click(function () {
     $("div.hid").css({"display":"none"});
     $("main").css({"display":"block"});
 });
+// 获取城市信息
+let city;
+$.ajax({
+    type: "get",
+    url: "https://www.toutiao.com/stream/widget/local_weather/city/",
+    dataType: "jsonp",
+    success: function (obj) {
+        city = obj.data;
+        updataCity(city);
+    }
+});
+function updataCity() {
+    let k = 0;
+    $.each(city,function (indexs,vals) {
+        let str = `<ul class="prov">${indexs}<br></ul>`;
+        $(".cityHome").append(str);
+        $.each(vals,function (i) {
+            let str1 = `<li class="prov">${i}</li>`;
+            $("ul.prov").eq(k).append(str1);
+        })
+    });
+    k++;
+}
 // 所有数据加载完成后执行
 window.onload = function () {
-    // 获取城市信息
-    let city;
-    $.ajax({
-        type: "get",
-        url: "https://www.toutiao.com/stream/widget/local_weather/city/",
-        dataType: "jsonp",
-        success: function (obj) {
-            city = obj.data;
-            updataCity(city);
-        }
-    });
-    function updataCity() {
-        $.each(city,function (indexs,vals) {
-            let str = `<ul class="prov">${indexs}<br></ul>`;
-            $(".cityHome").append(str);
-            $.each(vals,function (i) {
-                let str1 = `<li class="prov">${i}</li>`;
-                $("ul.prov").append(str1);
-            })
-        })
-    }
     // 点击每个城市，获取当前城市的天气信息
-    $("li").click(function () {
+    $(".hid").find("li").click(function () {
         let con = $(this).html();
         fnajax(con);
         $("div.hid").css({"display":"none"});
