@@ -64,7 +64,7 @@ function updata(tianqi) {
                                     <span class="min">${tianqi.weather.tomorrow_low_temperature}</span>°C
                                 </span>
                                 <span>
-                                    <img src="./img/${tianqi.weather.tomorrow_weather_icon_id}.png" alt="">
+                                    <img src="./img/${tianqi.weather.weather_icon_id}.png" alt="">
                                 </span>
                             </div>
                         </div>`;
@@ -131,16 +131,16 @@ $.ajax({
     }
 });
 function updataCity() {
-    let k = 0;
+    let k = 1;
     $.each(city,function (indexs,vals) {
         let str = `<ul class="prov">${indexs}<br></ul>`;
-        $(".cityHome").append(str);
+        $(".cityHome").eq(l).append(str);
         $.each(vals,function (i) {
-            let str1 = `<li class="prov">${i}</li>`;
+            let str1 = `<li>${i}</li>`;
             $("ul.prov").eq(k).append(str1);
-        })
+        });
+        k++;
     });
-    k++;
 }
 // 所有数据加载完成后执行
 window.onload = function () {
