@@ -134,7 +134,7 @@ function updataCity() {
     let k = 1;
     $.each(city,function (indexs,vals) {
         let str = `<ul class="prov">${indexs}<br></ul>`;
-        $(".cityHome").eq(l).append(str);
+        $(".cityHome").append(str);
         $.each(vals,function (i) {
             let str1 = `<li>${i}</li>`;
             $("ul.prov").eq(k).append(str1);
