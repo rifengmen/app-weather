@@ -6,7 +6,6 @@ $.ajax({
     dataType: "jsonp",
     success: function (obj) {
         tianqi = obj.data;
-        console.log(tianqi);
         updata(tianqi);
     }
 });
@@ -83,6 +82,8 @@ function updata(tianqi) {
         $(".todayText").append(todayStr);
     })
     // 未来半个月天气预报部分
+    let high = [];
+    let low = [];
     $(".week ul").html("");
     let weekArr = tianqi.weather.forecast_list;
     weekArr.forEach(v => {
@@ -95,12 +96,7 @@ function updata(tianqi) {
                                 <img src="./img/${v.weather_icon_id}.png" alt="">
                             </div>
                             <div>${v.high_temperature}°</div>
-                            <div>
-                                <span class="dots dotDown"></span>
-                            </div>
-                            <div>
-                                <span class="dots dotUp"></span>
-                            </div>
+                            <div id="place"></div>
                             <div>${v.low_temperature}°</div>
                             <div>
                                 <span>${v.wind_direction}</span>
@@ -108,7 +104,58 @@ function updata(tianqi) {
                             </div>
                         </li>`;
         $(".week ul").append(weekStr);
-    })
+        high.push(v.high_temperature);
+        low.push(v.low_temperature);
+    });
+    // 初始化echarts,天气折线图
+    let myChart = echarts.init(document.getElementById('main'));
+    // 指定图表的配置项和数据
+    let option = {
+        xAxis:  {
+            show: false,
+            boundaryGap: false,
+            data: ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16']
+        },
+        yAxis: {
+            show: false,
+        },
+        series: [
+            {
+                type:'line',
+                smooth:0.5,
+                symbol:'circle',
+                symbolSize: 12,
+                itemStyle : {
+                    normal : {
+                        color:'#ffb74d',
+                        lineStyle:{
+                            width:5,
+                            color:'#ffb74d'
+                        }
+                    }
+                },
+                data:[high[0],high[1],high[2],high[3],high[4],high[5],high[6],high[7],high[8],high[9],high[10],high[11],high[12],high[13],high[14],high[15],],
+            },
+            {
+                type:'line',
+                smooth:0.5,
+                symbol:'circle',
+                symbolSize: 12,
+                itemStyle : {
+                    normal : {
+                        color:'#4fc3f7',
+                        lineStyle:{
+                            width:5,
+                            color:'#4fc3f7'
+                        }
+                    }
+                },
+                data:[low[0],low[1],low[2],low[3],low[4],low[5],low[6],low[7],low[8],low[9],low[10],low[11],low[12],low[13],low[14],low[15]],
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
 }
 // 显示选择城市页面
 $("header .citys").click(function () {

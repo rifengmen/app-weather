@@ -298,6 +298,7 @@ main .week {
     height: 7.74rem;
     background: #fff;
     overflow-x: auto;
+    position: relative;
 }
 main .week>ul {
     width: 20rem;
@@ -356,6 +357,17 @@ main .week .dotDown {
 }
 main .week .dotUp {
     background: #4fc3f7;
+}
+#main {
+    position: absolute;
+    top: 38%;
+    left: -1.7rem;
+    width: 23.3rem;
+    height: 3.5rem;
+}
+#place {
+    width: 100%;
+    height: 1.7rem;
 }
 /*推荐部分*/
 main .recommend {
