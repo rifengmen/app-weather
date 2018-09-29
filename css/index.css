@@ -360,10 +360,10 @@ main .week .dotUp {
 }
 #main {
     position: absolute;
-    top: 38%;
-    left: -1.7rem;
-    width: 23.3rem;
-    height: 3.5rem;
+    top: 50%;
+    left: 0;
+    width: 20rem;
+    height: 6rem;
 }
 #place {
     width: 100%;

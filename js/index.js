@@ -111,6 +111,12 @@ function updata(tianqi) {
     let myChart = echarts.init(document.getElementById('main'));
     // 指定图表的配置项和数据
     let option = {
+        grid:{
+            x:30,
+            x2:30,
+            y:20,
+            height:40
+        },
         xAxis:  {
             show: false,
             boundaryGap: false,
