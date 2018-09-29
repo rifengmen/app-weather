@@ -95,9 +95,7 @@ function updata(tianqi) {
                             <div>
                                 <img src="./img/${v.weather_icon_id}.png" alt="">
                             </div>
-                            <div>${v.high_temperature}°</div>
                             <div id="place"></div>
-                            <div>${v.low_temperature}°</div>
                             <div>
                                 <span>${v.wind_direction}</span>
                                 <span>${v.wind_level}级</span>
@@ -111,29 +109,59 @@ function updata(tianqi) {
     let myChart = echarts.init(document.getElementById('main'));
     // 指定图表的配置项和数据
     let option = {
+        // 盒子尺寸
         grid:{
+            // 四周留白区域大小
+            // 左边
             x:30,
+            // 右边
             x2:30,
-            y:20,
-            height:40
+            // 上下
+            y:60,
+            // 高度
+            height:80
         },
+        // X坐标轴
         xAxis:  {
+            // 隐藏
             show: false,
             boundaryGap: false,
+            // 坐标轴参数，随便，就是占个位置
             data: ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16']
         },
+        // Y坐标轴
         yAxis: {
+            // 隐藏
             show: false,
         },
+        // 线条
         series: [
             {
                 type:'line',
                 smooth:0.5,
+                // 折点形状
                 symbol:'circle',
+                // 折点大小
                 symbolSize: 12,
                 itemStyle : {
                     normal : {
+                        label: {
+                            // 显示折点数据
+                            show: true,
+                            // 文字距离折点的距离
+                            distance:'10',
+                            // 文字后添加的数据，b数据为序号，c为数据值
+                            formatter: '{c}°C',
+                            // 数据字号
+                            fontSize:'12',
+                            // 数据颜色
+                            textStyle: {
+                                color: '#000'
+                            }
+                        },
+                        // 折点颜色
                         color:'#ffb74d',
+                        // 线条设置
                         lineStyle:{
                             width:5,
                             color:'#ffb74d'
@@ -149,6 +177,16 @@ function updata(tianqi) {
                 symbolSize: 12,
                 itemStyle : {
                     normal : {
+                        label: {
+                            show: true,
+                            position:'bottom',
+                            distancebottom:'20',
+                            formatter: '{c}°C',
+                            fontSize:'12',
+                            textStyle: {
+                                color: '#000'
+                            }
+                        },
                         color:'#4fc3f7',
                         lineStyle:{
                             width:5,

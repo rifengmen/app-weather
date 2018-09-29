@@ -298,6 +298,7 @@ main .week {
     height: 7.74rem;
     background: #fff;
     overflow-x: auto;
+    overflow-y: hidden;
     position: relative;
 }
 main .week>ul {
@@ -360,14 +361,14 @@ main .week .dotUp {
 }
 #main {
     position: absolute;
-    top: 50%;
+    top: 32%;
     left: 0;
     width: 20rem;
-    height: 6rem;
+    height: 8rem;
 }
 #place {
     width: 100%;
-    height: 1.7rem;
+    height: 2.5rem;
 }
 /*推荐部分*/
 main .recommend {
